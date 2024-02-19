@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Usuario</title>
+</head>
+<body>
+<h2>Agregar Usuario</h2>
+<form action="http://localhost:8080/demo/add" method="post" >
+    <label for="name">Nombre:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="dni">Dni</label>
+    <input type="text" id="dni" name="dni"><br>
+    <input type="submit" value="Enviar">
+</form>
+<form action="http://localhost:8080/demo/el_primero" method="get">
+    <label for="name1">Nombre:</label><br>
+    <input type="text" id="name1" name="name"><br>
+    <input type="submit" value="Enviar">
+</form>
+<br>
+<br>
+<form action="http://localhost:8080/demo/delete" method=get>
+    <label for="dni1">Borrar por dni:</label><br>
+    <input type="text" id="dni1" name="dni"><br>
+    <input type="submit" value="Enviar">
+</form>
+<br>
+<form action="http://localhost:8080/demo/update" method="get">
+    <label for="dniNuevo">Nuevo DNI</label>
+    <input type="text" id="dni4" name="dni"><br>
+    <input type="text" id="dniNuevo" name="dniNuevo"><br>
+    <input type="submit" value="Enviar">
+</form>
+</body>
+</html>
