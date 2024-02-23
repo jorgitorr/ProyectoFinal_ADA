@@ -1,6 +1,6 @@
 package com.example.JPA.MySQL
 
-import com.example.JPA.MySQL.data.Lista
+
 import com.example.JPA.MySQL.data.Pelicula
 import com.example.JPA.MySQL.data.User
 import com.example.JPA.MySQL.repository.PeliculaRepository

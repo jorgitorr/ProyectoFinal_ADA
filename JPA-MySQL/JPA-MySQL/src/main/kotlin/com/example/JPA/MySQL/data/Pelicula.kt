@@ -1,17 +1,22 @@
 package com.example.JPA.MySQL.data
 
 import jakarta.persistence.*
+import java.time.LocalDateTime
 
 @Entity
-@Table(name = "peliculas")
 class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val idPelicula: Int? = null
     var tituloPelicula: String? = null
-    var vista: Boolean? = null
+    var vista: Boolean? = false
+    var fecha: LocalDateTime?= null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idActor")
-    val protagonista: Actor? = null
+    var protagonista: Actor? = null
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idUser")
+    var usuario: User?=null
 }

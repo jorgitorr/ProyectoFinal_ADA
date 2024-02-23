@@ -1,0 +1,51 @@
+package com.example.JPA.MySQL.controller
+
+import com.example.JPA.MySQL.data.Pelicula
+import com.example.JPA.MySQL.data.User
+import com.example.JPA.MySQL.repository.PeliculaRepository
+import com.example.JPA.MySQL.repository.UserRepository
+import com.example.JPA.MySQL.services.PeliculaService
+import org.aspectj.weaver.tools.cache.SimpleCacheFactory.path
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.*
+import java.time.LocalDateTime
+
+
+@Controller // This means that this class is a Controller
+@RequestMapping(path=["/pelicula"])
+class PeliculaController {
+    @Autowired
+    private val peliculaService: PeliculaService ?= null
+
+    @PostMapping(path=["/add"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun addFilm(@RequestParam tituloPelicula:String, idUser: Int, idActor: Int):String{
+        return peliculaService!!.addNewFilm(tituloPelicula, idActor, idUser)
+    }
+
+    @GetMapping(path=["/all"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun getAllFilms():MutableIterable<Pelicula?>{
+        return peliculaService!!.getAllFilms()
+    }
+
+
+    @GetMapping("/busca_por_id")
+    @ResponseBody
+    fun getFilmById(idPelicula: Int): Pelicula?{
+        return peliculaService!!.getFilmsById(idPelicula)
+    }
+
+    @GetMapping(path=["/busca_por_titulo"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun getFilmsByTitulo(@RequestParam tituloPelicula: String):List<Pelicula>{
+        return peliculaService!!.getFilmsByTitulo(tituloPelicula)
+    }
+
+    @GetMapping(path=["/busca_por_vista"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun getFilmsByVista(@RequestParam vista:Boolean):List<Pelicula>{
+        return peliculaService!!.getFilmsByVista(vista)
+    }
+}

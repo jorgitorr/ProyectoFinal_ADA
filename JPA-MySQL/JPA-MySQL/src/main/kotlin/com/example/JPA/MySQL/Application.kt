@@ -1,5 +1,6 @@
 package com.example.JPA.MySQL
 
+import com.example.JPA.MySQL.controller.UserController
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -8,4 +9,6 @@ class Application
 
 fun main(args: Array<String>) {
 	runApplication<Application>(*args)
+	var user = UserController()
+	//user.anadirLista("Paco","peliculasFavoritas")
 }
