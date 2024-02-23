@@ -22,6 +22,7 @@ class UserController {
     }
 
 
+
     @GetMapping("/all")
     @ResponseBody
     fun getAllUsers(): Iterable<User?> {
