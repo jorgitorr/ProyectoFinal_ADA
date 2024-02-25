@@ -9,6 +9,4 @@ class Application
 
 fun main(args: Array<String>) {
 	runApplication<Application>(*args)
-	var user = UserController()
-	//user.anadirLista("Paco","peliculasFavoritas")
 }

@@ -20,8 +20,8 @@ class PeliculaController {
 
     @PostMapping(path=["/add"]) // Map ONLY POST Requests
     @ResponseBody
-    fun addFilm(@RequestParam tituloPelicula:String, idUser: Int, idActor: Int):String{
-        return peliculaService!!.addNewFilm(tituloPelicula, idActor, idUser)
+    fun addFilm(@RequestParam tituloPelicula:String, idUser: Int, idActor: Int, vista: Int):String{
+        return peliculaService!!.addNewFilm(tituloPelicula, idActor, idUser, vista)
     }
 
     @GetMapping(path=["/all"]) // Map ONLY POST Requests
@@ -45,7 +45,7 @@ class PeliculaController {
 
     @GetMapping(path=["/busca_por_vista"]) // Map ONLY POST Requests
     @ResponseBody
-    fun getFilmsByVista(@RequestParam vista:Boolean):List<Pelicula>{
+    fun getFilmsByVista(@RequestParam vista:Int):List<Pelicula>{
         return peliculaService!!.getFilmsByVista(vista)
     }
 }

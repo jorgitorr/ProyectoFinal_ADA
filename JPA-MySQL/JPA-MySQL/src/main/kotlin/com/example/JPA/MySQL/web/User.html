@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="css/User.css">
+</head>
+<body>
+<header>
+    <h1>LISTA PELICULAS</h1>
+</header>
+<main>
+    <form action="http://localhost:8080/user/add" method="post">
+        <label for="nombreUser">Nombre:</label><br>
+        <input type="text" id="nombreUser"><br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+    <br>
+    <form action="http://localhost:8080/user/all" method="get">
+        <button type="submit">devolver todos los usuarios</button>
+    </form>
+    <br>
+</main>
+</body>
+</html>

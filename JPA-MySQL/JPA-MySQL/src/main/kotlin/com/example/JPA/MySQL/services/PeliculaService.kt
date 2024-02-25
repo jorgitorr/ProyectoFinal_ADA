@@ -28,7 +28,8 @@ class PeliculaService {
     fun addNewFilm(
             tituloPelicula: String,
             idActor: Int,
-            idUser:Int
+            idUser:Int,
+            vista:Int
     ): String {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
@@ -37,6 +38,7 @@ class PeliculaService {
         peli.fecha = LocalDateTime.now()
         peli.usuario = userRepository!!.findUserByIdUser(idUser)
         peli.protagonista = actorRepository!!.findActorsByIdActor(idActor)
+        peli.vista = vista
         listaPeliculaRepository!!.save(peli)
         return "Saved"
     }
@@ -57,7 +59,7 @@ class PeliculaService {
     }
 
 
-    fun getFilmsByVista(vista : Boolean) : List<Pelicula>{
+    fun getFilmsByVista(vista : Int) : List<Pelicula>{
         return listaPeliculaRepository!!.findPeliculaByVista(vista)
     }
 }

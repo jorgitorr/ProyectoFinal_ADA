@@ -9,7 +9,7 @@ class Pelicula {
     @GeneratedValue(strategy = GenerationType.AUTO)
     val idPelicula: Int? = null
     var tituloPelicula: String? = null
-    var vista: Boolean? = false
+    var vista: Int? = 0 //si es 0 es que la pelicula no la ha visto, si es 1 es que si
     var fecha: LocalDateTime?= null
 
     @ManyToOne(fetch = FetchType.LAZY)

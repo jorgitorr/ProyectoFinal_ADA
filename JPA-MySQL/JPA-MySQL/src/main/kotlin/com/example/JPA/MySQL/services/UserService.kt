@@ -11,7 +11,6 @@ class UserService  {
     @Autowired
     private val userRepository: UserRepository ?= null
 
-
     fun addNewUser(
             nombreUser: String?
     ): String {
@@ -42,6 +41,27 @@ class UserService  {
             User()
         } else {
             userRepository!!.findUserByIdUser(idUser)
+        }
+    }
+
+    fun deleteUserByNombreUser(nombreUser: String?):String{
+        var usuario = getUsersByName(nombreUser).first()
+        if(nombreUser.isNullOrEmpty()){
+            return "No se encontró el usuario"
+        }else{
+            userRepository!!.deleteUser(usuario!!)
+            return "Usuario borrado"
+        }
+    }
+
+
+    fun updateUserByNombreUser(nombreUser: String?,nombreNuevo:String?):String{
+        var usuario = getUsersByName(nombreUser).first()
+        if(nombreUser.isNullOrEmpty()){
+            return "No se encontró el usuario"
+        }else{
+            usuario?.nombreUser = nombreNuevo
+            return "Usuario modificado"
         }
     }
 }
