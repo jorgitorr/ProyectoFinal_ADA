@@ -13,14 +13,14 @@
 <main>
     <h2>Añade película</h2>
     <form action="http://localhost:8080/pelicula/add" method="post">
-        <label for="tituloPelicula">Nombre:</label><br>
+        <label for="tituloPelicula">Nombre: </label><br>
         <input type="text" id="tituloPelicula"><br>
         <label for="idUser">Id usuario: </label><br>
-        <input type="text" id="idUser"><br>
+        <input type="text" id="idUser" title="Por favor, ingresa solo números"><br>
         <label for="idActor">Id Actor: </label><br>
-        <input type="text" id="idActor"><br>
-        <label for="vista">Vista(1)/No vista(0)</label><br>
-        <input type="text" id="vista"><br><br>
+        <input type="text" id="idActor" title="Por favor, ingresa solo números"><br>
+        <label for="vista">Vista: </label><br>
+        <input type="text" id="vista" title="Por favor, ingresa 1 si la has visto o 0 si no"><br><br>
         <input type="submit" value="Enviar"><br>
     </form>
     <br>

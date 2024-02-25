@@ -3,8 +3,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    color: #333;
 }
 
+/* Estilos del encabezado */
 header {
     background-color: #333;
     color: #fff;
@@ -16,7 +18,7 @@ header h1 {
     margin: 0;
 }
 
-/* Estilos para el contenido principal */
+/* Estilos del contenido principal */
 main {
     max-width: 600px;
     margin: 20px auto;
@@ -26,11 +28,14 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para los títulos */
 h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* Estilos para los formularios */
 form {
     margin-bottom: 20px;
 }
@@ -49,11 +54,16 @@ input[type="text"] {
 
 input[type="submit"],
 button[type="submit"] {
-    background-color: #333;
+    background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
