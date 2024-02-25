@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,23 @@
     <h1>PELICULAS</h1>
 </header>
 <main>
-    <section class = "presentacion">
-        <h2>Bienvenidos</h2>
-        <div class="botones">
-
-        </div>
-    </section>
+    <h2>Añade película</h2>
+    <form action="http://localhost:8080/pelicula/add" method="post">
+        <label for="tituloPelicula">Nombre:</label><br>
+        <input type="text" id="tituloPelicula"><br>
+        <label for="idUser">Id usuario: </label><br>
+        <input type="text" id="idUser"><br>
+        <label for="idActor">Id Actor: </label><br>
+        <input type="text" id="idActor"><br>
+        <label for="vista">Vista(1)/No vista(0)</label><br>
+        <input type="text" id="vista"><br><br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+    <br>
+    <form action="http://localhost:8080/pelicula/all" method="get">
+        <button type="submit">devolver todas las películas</button>
+    </form>
+    <br>
 </main>
 </body>
 </html>

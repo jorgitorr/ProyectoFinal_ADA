@@ -49,7 +49,7 @@ class UserService  {
         if(nombreUser.isNullOrEmpty()){
             return "No se encontró el usuario"
         }else{
-            userRepository!!.deleteUser(usuario!!)
+            userRepository!!.delete(usuario!!)
             return "Usuario borrado"
         }
     }
@@ -61,6 +61,7 @@ class UserService  {
             return "No se encontró el usuario"
         }else{
             usuario?.nombreUser = nombreNuevo
+            userRepository!!.save(usuario!!)
             return "Usuario modificado"
         }
     }

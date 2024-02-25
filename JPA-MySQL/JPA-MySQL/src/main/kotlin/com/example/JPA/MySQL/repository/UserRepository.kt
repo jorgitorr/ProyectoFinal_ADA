@@ -14,8 +14,5 @@ interface UserRepository : CrudRepository<User?, Int?>{
     fun findUserByIdUser(idUser: Int):User
     fun findUserByNombreUser(nombreUser: String): List<User?>
 
-    fun deleteUser(user: User):String
-
-    fun updateUserByNombreUser(nombreUser: String):String
 
 }

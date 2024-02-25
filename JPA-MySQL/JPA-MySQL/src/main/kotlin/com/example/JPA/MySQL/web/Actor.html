@@ -8,15 +8,20 @@
 </head>
 <body>
 <header>
-    <h1>LISTA PELICULAS</h1>
+    <h1>ACTOR</h1>
 </header>
 <main>
-    <section class = "presentacion">
-        <h2>Bienvenidos</h2>
-        <div class="botones">
-
-        </div>
-    </section>
+    <h2>Añade Actor:</h2>
+    <form action="http://localhost:8080/actor/add" method="post">
+        <label for="nombreActor">Nombre:</label><br>
+        <input type="text" id="nombreActor"><br><br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+    <br>
+    <form action="http://localhost:8080/actor/all" method="get">
+        <button type="submit">devolver todos los actores</button>
+    </form>
+    <br>
 </main>
 </body>
 </html>

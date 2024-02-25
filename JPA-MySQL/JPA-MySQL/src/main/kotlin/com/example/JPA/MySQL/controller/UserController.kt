@@ -42,12 +42,14 @@ class UserController {
         return userService!!.getUsersById(idUser)
     }
 
+    //me fallo no sé por qué
     @GetMapping("/delete")
     @ResponseBody
     fun deleteUserByNombreUser(@RequestParam nombreUser: String?):String{
         return userService!!.deleteUserByNombreUser(nombreUser)
     }
 
+    //me falla no sé por qué
     @GetMapping("/update")
     @ResponseBody
     fun updateUserByNombreUser(@RequestParam nombreUser: String?, @RequestParam nombreNuevo:String):String{
