@@ -8,6 +8,6 @@ class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     var idUser: Int? = null
     var nombreUser: String? = null
-    @OneToMany(mappedBy = "idPelicula", fetch = FetchType.LAZY)
-    var listas: MutableList<Pelicula>? = mutableListOf()
+    /*@OneToMany(mappedBy = "idPelicula", fetch = FetchType.LAZY)
+    var listas: MutableList<Pelicula>? = mutableListOf()*/
 }
