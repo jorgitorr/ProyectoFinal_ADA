@@ -37,7 +37,10 @@ class PeliculaService {
         peli.tituloPelicula = tituloPelicula
         peli.fecha = LocalDateTime.now()
         peli.usuario = userRepository!!.findUserByIdUser(idUser)
-        peli.protagonista = actorRepository!!.findActorsByIdActor(idActor)
+        if(idActor!=null)
+            peli.protagonista = actorRepository!!.findActorsByIdActor(idActor)
+        else
+            peli.protagonista = null
         peli.vista = vista
         listaPeliculaRepository!!.save(peli)
         return "Saved"

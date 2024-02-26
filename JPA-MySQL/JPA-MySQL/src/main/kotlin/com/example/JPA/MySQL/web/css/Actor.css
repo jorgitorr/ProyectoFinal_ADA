@@ -6,6 +6,10 @@ body {
     color: #333;
 }
 
+nav {
+    margin-top: 25px; /* Ajusta el valor según sea necesario */
+}
+
 /* Estilos del encabezado */
 header {
     background-color: #333;
@@ -16,6 +20,7 @@ header {
 
 header h1 {
     margin: 0;
+    color: #fff; /* Color del texto del título */
 }
 
 /* Estilos del contenido principal */
@@ -29,12 +34,47 @@ main {
 }
 
 /* Estilos para los títulos */
-h2 {
+h1, h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #333;
+    text-align: center;
 }
 
+/* Estilos para los enlaces */
+a {
+    text-decoration: none;
+    color: #fff; /* Color del texto del enlace */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para el menú */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.menu li a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #333; /* Fondo del enlace del menú */
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #F3DFA2;
+}
 /* Estilos para los formularios */
 form {
     margin-bottom: 20px;

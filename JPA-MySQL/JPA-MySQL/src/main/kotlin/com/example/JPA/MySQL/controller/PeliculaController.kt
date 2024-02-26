@@ -20,7 +20,7 @@ class PeliculaController {
 
     @PostMapping(path=["/add"]) // Map ONLY POST Requests
     @ResponseBody
-    fun addFilm(@RequestParam tituloPelicula:String, idUser: Int, idActor: Int, vista: Int):String{
+    fun addFilm(@RequestParam tituloPelicula:String, idActor: Int, idUser: Int, vista: Int):String{
         return peliculaService!!.addNewFilm(tituloPelicula, idActor, idUser, vista)
     }
 
