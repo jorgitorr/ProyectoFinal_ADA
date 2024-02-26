@@ -31,6 +31,23 @@
         <input type="submit" value="Enviar"><br>
     </form>
     <br>
+
+
+    <h2>Busca por titulo</h2>
+    <form action="http://localhost:8080/pelicula/busca_por_titulo" method="get">
+        <label for="tituloPelicula2">Nombre: </label><br>
+        <input type="text" id="tituloPelicula2" name="tituloPelicula"><br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+
+
+    <h2>Busca por películas vistas</h2>
+    <form action="http://localhost:8080/pelicula/busca_por_vista" method="get">
+        <label for="vistas">Vista: </label><br>
+        <input type="text" id="vistas" name="vista" title="0 si no está vista y 1 si está vista"><br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+
     <form action="http://localhost:8080/pelicula/all" method="get">
         <button type="submit">devolver todas las películas</button>
     </form>

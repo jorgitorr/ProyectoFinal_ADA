@@ -25,6 +25,38 @@
         <input type="submit" value="Enviar"><br>
     </form>
     <br>
+
+    <br>
+    <h2>Borra Usuario: </h2>
+    <form action="http://localhost:8080/user/delete" method="get">
+        <label for="nombreUser2">Nombre</label>
+        <input type="text" id="nombreUser2" name="nombreUser">
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+
+    <h2>Actualizar Usuario: </h2>
+    <form action="http://localhost:8080/user/update" method="get">
+        <label for="nombreAntiguo">Nombre Antiguo: </label>
+        <input type="text" id="nombreAntiguo" name="nombreUser">
+        <label for="nombreUser3">Nombre Nuevo: </label>
+        <input type="text" id="nombreUser3" name="nombreNuevo">
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+
+
+    <br>
+    <h2>Busca usuario por nombre: </h2>
+    <form action="http://localhost:8080/user/busca_por_nombre" method="get">
+        <label for="nombreUser4">Nombre: </label>
+        <input type="text" id="nombreUser4" name="nombreUser">
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+
+
+
     <form action="http://localhost:8080/user/all" method="get">
         <button type="submit">devolver todos los usuarios</button>
     </form>
