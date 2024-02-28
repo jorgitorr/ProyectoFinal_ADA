@@ -65,4 +65,17 @@ class PeliculaService {
     fun getFilmsByVista(vista : Int) : List<Pelicula>{
         return listaPeliculaRepository!!.findPeliculaByVista(vista)
     }
+
+    fun getFilmsByIdActor(idActor: Int):List<Pelicula>{
+        var actor = actorRepository!!.findActorsByIdActor(idActor)
+        return listaPeliculaRepository!!.findPeliculaByProtagonista(actor)
+    }
+
+    fun getFilmsByNombreActor(nombreActor: String):List<Pelicula>{
+        var actor = actorRepository!!.findActorsByNombreActor(nombreActor).first()
+        return listaPeliculaRepository!!.findPeliculaByProtagonista(actor)
+    }
+
+
+
 }

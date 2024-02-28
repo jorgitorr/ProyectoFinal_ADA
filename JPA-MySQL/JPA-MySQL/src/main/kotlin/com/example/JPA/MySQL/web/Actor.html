@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
+    <title>filmswatch/actores</title>
     <link rel="stylesheet" href="css/Actor.css">
 </head>
 <body>
@@ -12,30 +12,46 @@
     <nav>
         <ul class="menu">
             <li><a href="Inicio.html">Inicio</a></li>
-            <li><a href="Pelicula.html">Película</a></li>
             <li><a href="User.html">Usuario</a></li>
+            <li><a href="Actor.html">Actor</a></li>
+            <li><a href="Pelicula.html">Película</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <h2>Añade Actor:</h2>
-    <form action="http://localhost:8080/actor/add" method="post">
-        <label for="nombreActor">Nombre:</label><br>
-        <input type="text" id="nombreActor" name="nombreActor"><br><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
+    <section class="formulario">
+        <h2>Añade Actor:</h2>
+        <form action="http://localhost:8080/actor/add" method="post">
+            <label for="nombreActor">Nombre:</label><br>
+            <input type="text" id="nombreActor" name="nombreActor"><br><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
-    <h2>Busca por nombre: </h2>
-    <form action="http://localhost:8080/actor/busca_por_nombre" method="get">
-        <label for="nombreActor2"></label><br>
-        <input type="text" id="nombreActor2" name="nombreActor"><br><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
-    <br>
-    <form action="http://localhost:8080/actor/all" method="get">
-        <button type="submit">devolver todos los actores</button>
-    </form>
-    <br>
+    <section class="formulario">
+        <h2>Busca por nombre:</h2>
+        <form action="http://localhost:8080/actor/busca_por_nombre" method="get">
+            <label for="nombreActor2">Nombre:</label><br>
+            <input type="text" id="nombreActor2" name="nombreActor"><br><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
+
+    <section class="formulario">
+        <h2>Busca por nombre película:</h2>
+        <form action="http://localhost:8080/actor/busca_por_nombre_pelicula" method="get">
+            <label for="nombrePelicula">Nombre película:</label><br>
+            <input type="text" id="nombrePelicula" name="nombrePelicula"><br><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
+
+    <section class="center-button">
+        <form action="http://localhost:8080/actor/all" method="get">
+            <h2>Devolver todos los actores:</h2>
+            <button type="submit">Devolver todos los actores</button>
+        </form>
+    </section>
 </main>
 </body>
 </html>

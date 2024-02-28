@@ -48,4 +48,18 @@ class PeliculaController {
     fun getFilmsByVista(@RequestParam vista:Int):List<Pelicula>{
         return peliculaService!!.getFilmsByVista(vista)
     }
+
+
+    @GetMapping(path=["/busca_por_id_actor"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun getFilmsByActor(@RequestParam idActor: Int):List<Pelicula>{
+        return peliculaService!!.getFilmsByIdActor(idActor)
+    }
+
+
+    @GetMapping(path=["/busca_por_nombre_actor"]) // Map ONLY POST Requests
+    @ResponseBody
+    fun getFilmsByActor(@RequestParam nombreActor: String):List<Pelicula>{
+        return peliculaService!!.getFilmsByNombreActor(nombreActor)
+    }
 }

@@ -3,52 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
+    <title>filmswatch/peliculas</title>
     <link rel="stylesheet" href="css/Pelicula.css">
 </head>
 <body>
 <header>
-    <h1>PELICULAS</h1>
+    <h1>PELICULA</h1>
     <nav>
         <ul class="menu">
             <li><a href="Inicio.html">Inicio</a></li>
-            <li><a href="Pelicula.html">Película</a></li>
             <li><a href="User.html">Usuario</a></li>
+            <li><a href="Actor.html">Actor</a></li>
+            <li><a href="Pelicula.html">Película</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <h2>Añade película</h2>
-    <form action="http://localhost:8080/pelicula/add" method="post">
-        <label for="tituloPelicula">Nombre: </label><br>
-        <input type="text" id="tituloPelicula" name="tituloPelicula"><br>
-        <label for="idUser">Id usuario: </label><br>
-        <input type="text" id="idUser" name="idUser" title="Por favor, ingresa solo números"><br>
-        <label for="idActor">Id Actor: </label><br>
-        <input type="text" id="idActor" name="idActor" title="Por favor, ingresa solo números" ><br>
-        <label for="vista">Vista: </label><br>
-        <input type="text" id="vista" title="Por favor, ingresa 1 si la has visto o 0 si no" name="vista"><br><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
-    <br>
+    <section class="formulario">
+        <h2>Añade película</h2>
+        <form action="http://localhost:8080/pelicula/add" method="post">
+            <label for="tituloPelicula">Nombre: </label><br>
+            <input type="text" id="tituloPelicula" name="tituloPelicula"><br>
+            <label for="idUser">Id usuario: </label><br>
+            <input type="text" id="idUser" name="idUser" title="Por favor, ingresa solo números"><br>
+            <label for="idActor">Id Actor: </label><br>
+            <input type="text" id="idActor" name="idActor" title="Por favor, ingresa solo números" ><br>
+            <label for="vista">Vista: </label><br>
+            <input type="text" id="vista" title="Por favor, ingresa 1 si la has visto o 0 si no" name="vista"><br><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
+    <section class="formulario">
+        <h2>Busca por titulo</h2>
+        <form action="http://localhost:8080/pelicula/busca_por_titulo" method="get">
+            <label for="tituloPelicula2">Nombre: </label><br>
+            <input type="text" id="tituloPelicula2" name="tituloPelicula"><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
-    <h2>Busca por titulo</h2>
-    <form action="http://localhost:8080/pelicula/busca_por_titulo" method="get">
-        <label for="tituloPelicula2">Nombre: </label><br>
-        <input type="text" id="tituloPelicula2" name="tituloPelicula"><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
+    <section class="formulario">
+        <h2>Busca por películas vistas</h2>
+        <form action="http://localhost:8080/pelicula/busca_por_vista" method="get">
+            <label for="vistas">Vista: </label><br>
+            <input type="text" id="vistas" name="vista" title="0 si no está vista y 1 si está vista"><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
+    <section class="formulario">
+        <h2>Busca películas por id Actor</h2>
+        <form action="http://localhost:8080/pelicula/busca_por_id_actor" method="get">
+            <label for="idActor">Id Actor: </label><br>
+            <input type="text" id="idActor2" name="idActor" title="Introduce el nombre del actor"><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
-    <h2>Busca por películas vistas</h2>
-    <form action="http://localhost:8080/pelicula/busca_por_vista" method="get">
-        <label for="vistas">Vista: </label><br>
-        <input type="text" id="vistas" name="vista" title="0 si no está vista y 1 si está vista"><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
+    <section class="formulario">
+        <h2>Busca películas por nombre Actor</h2>
+        <form action="http://localhost:8080/pelicula/busca_por_nombre_actor" method="get">
+            <label for="nombreActor">Nombre Actor: </label><br>
+            <input type="text" id="nombreActor" name="nombreActor" title="Introduce el nombre del actor"><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
-    <form action="http://localhost:8080/pelicula/all" method="get">
+    <form action="http://localhost:8080/pelicula/all" method="get" class="center-button">
         <button type="submit">devolver todas las películas</button>
     </form>
     <br>

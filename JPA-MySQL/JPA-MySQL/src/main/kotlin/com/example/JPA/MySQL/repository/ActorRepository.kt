@@ -7,4 +7,5 @@ interface ActorRepository: CrudRepository<Actor?, Int?> {
     fun findActorsByNombreActor(nombreActor:String): List<Actor>
 
     fun findActorsByIdActor(idActor: Int):Actor
+
 }

@@ -1,6 +1,7 @@
 package com.example.JPA.MySQL.controller
 
 import com.example.JPA.MySQL.data.Actor
+import com.example.JPA.MySQL.data.Pelicula
 import com.example.JPA.MySQL.services.ActorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
@@ -41,5 +42,12 @@ class ActorController {
     @ResponseBody
     fun getActorByNombreActor(@RequestParam nombreActor: String): List<Actor>{
         return actorService!!.getActorByNombreActor(nombreActor)
+    }
+
+
+    @GetMapping("/busca_por_nombre_pelicula")
+    @ResponseBody
+    fun getActorByFilm(@RequestParam nombrePelicula:String):Actor{
+        return actorService!!.getActorByFilm(nombrePelicula)
     }
 }

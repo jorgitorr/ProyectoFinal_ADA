@@ -3,61 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>filmswatch/usuarios</title>
     <link rel="stylesheet" href="css/User.css">
 </head>
 <body>
 <header>
-    <h1>USER</h1>
+        <h1>USUARIO</h1>
     <nav>
         <ul class="menu">
             <li><a href="Inicio.html">Inicio</a></li>
-            <li><a href="Pelicula.html">Película</a></li>
             <li><a href="User.html">Usuario</a></li>
+            <li><a href="Actor.html">Actor</a></li>
+            <li><a href="Pelicula.html">Película</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <h2>Añade usuario: </h2>
-    <form action="http://localhost:8080/user/add" method="post">
-        <label for="nombreUser">Nombre:</label><br>
-        <input type="text" id="nombreUser" name="nombreUser"><br><br>
-        <input type="submit" value="Enviar"><br>
-    </form>
-    <br>
+    <section class="formulario">
+        <h2>Añade usuario:</h2>
+        <form action="http://localhost:8080/user/add" method="post">
+            <label for="nombreUser">Nombre:</label><br>
+            <input type="text" id="nombreUser" name="nombreUser"><br><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 
-    <br>
-    <h2>Borra Usuario: </h2>
-    <form action="http://localhost:8080/user/delete" method="get">
-        <label for="nombreUser2">Nombre</label>
-        <input type="text" id="nombreUser2" name="nombreUser">
-        <input type="submit" value="Enviar">
-    </form>
-    <br>
+    <section class="formulario">
+        <h2>Borra Usuario:</h2>
+        <form action="http://localhost:8080/user/delete" method="get">
+            <label for="nombreUser2">Nombre</label>
+            <input type="text" id="nombreUser2" name="nombreUser">
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
 
-    <h2>Actualizar Usuario: </h2>
-    <form action="http://localhost:8080/user/update" method="get">
-        <label for="nombreAntiguo">Nombre Antiguo: </label>
-        <input type="text" id="nombreAntiguo" name="nombreUser">
-        <label for="nombreUser3">Nombre Nuevo: </label>
-        <input type="text" id="nombreUser3" name="nombreNuevo">
-        <input type="submit" value="Enviar">
-    </form>
-    <br>
+    <section class="formulario">
+        <h2>Actualizar Usuario:</h2>
+        <form action="http://localhost:8080/user/update" method="get">
+            <label for="nombreAntiguo">Nombre Antiguo:</label>
+            <input type="text" id="nombreAntiguo" name="nombreUser">
+            <label for="nombreUser3">Nombre Nuevo:</label>
+            <input type="text" id="nombreUser3" name="nombreNuevo">
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
 
+    <section class="formulario">
+        <h2>Busca usuario por nombre:</h2>
+        <form action="http://localhost:8080/user/busca_por_nombre" method="get">
+            <label for="nombreUser4">Nombre:</label>
+            <input type="text" id="nombreUser4" name="nombreUser">
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
 
-    <br>
-    <h2>Busca usuario por nombre: </h2>
-    <form action="http://localhost:8080/user/busca_por_nombre" method="get">
-        <label for="nombreUser4">Nombre: </label>
-        <input type="text" id="nombreUser4" name="nombreUser">
-        <input type="submit" value="Enviar">
-    </form>
-    <br>
-
-
-
-    <form action="http://localhost:8080/user/all" method="get">
+    <form action="http://localhost:8080/user/all" method="get" class="center-button">
         <button type="submit">devolver todos los usuarios</button>
     </form>
     <br>
