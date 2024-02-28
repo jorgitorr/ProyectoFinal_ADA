@@ -15,6 +15,11 @@ class ActorService {
 
     @Autowired
     private val peliculaRepository: PeliculaRepository?= null
+
+    /**
+     * Permite agregar un actor
+     * @param nombreActor nombre del actor
+     */
     fun addNewActor(
             nombreActor: String?
     ): String {
@@ -26,20 +31,35 @@ class ActorService {
         return "Saved"
     }
 
+    /**
+     * Devuelve todos los actores
+     */
     fun getAllActors(): MutableIterable<Actor?> {
         return actorRepository!!.findAll()
     }
 
 
+    /**
+     * Devuelve el actor por id
+     * @param idActor id del actor
+     */
     fun getActorById(idActor: Int): Actor?{
         return actorRepository!!.findActorsByIdActor(idActor)
     }
 
 
+    /**
+     * Devuelve actor por el nombre
+     * @param nombreActor nombre del actor
+     */
     fun getActorByNombreActor(nombreActor: String): List<Actor>{
         return actorRepository!!.findActorsByNombreActor(nombreActor)
     }
 
+    /**
+     * Devuelve actor por la pelicula
+     * @param nombrePelicula nombre de la pelicula
+     */
     fun getActorByFilm(nombrePelicula: String):Actor{
         var pelicula = peliculaRepository!!.findPeliculaByTituloPelicula(nombrePelicula).first()
         return pelicula.protagonista!!

@@ -22,8 +22,11 @@ class PeliculaService {
 
 
     /**
-     * constructor sobreescrito
-     * para poder crear una pelicula con un id de Actor y un idUser
+     * Permite crear una pelicula
+     * @param tituloPelicula titulo de la pelicula
+     * @param idActor id del actor
+     * @param idUser id del usuario
+     * @param vista 0 -> pelicula no vista, 1 -> pelicula vista
      */
     fun addNewFilm(
             tituloPelicula: String,
@@ -47,30 +50,55 @@ class PeliculaService {
     }
 
 
+    /**
+     * Devuelve todas las peliculas
+     */
     fun getAllFilms(): MutableIterable<Pelicula?> {
         return listaPeliculaRepository!!.findAll()
     }
 
 
+    /**
+     * Devuelve las película por id
+     * @param idPelicula id de la pelicula
+     */
     fun getFilmsById(idPelicula: Int):Pelicula?{
         return listaPeliculaRepository!!.findPeliculaByIdPelicula(idPelicula)
     }
 
+
+    /**
+     * Obtiene peliculas por titulos
+     * @param titulo titulo de la pelicula
+     */
 
     fun getFilmsByTitulo(titulo:String): List<Pelicula>{
         return listaPeliculaRepository!!.findPeliculaByTituloPelicula(titulo)
     }
 
 
+    /**
+     * Obtiene pelicula si la han visto
+     * @param vista 0 -> no se ha visto la película, 1 -> se ha visto
+     */
     fun getFilmsByVista(vista : Int) : List<Pelicula>{
         return listaPeliculaRepository!!.findPeliculaByVista(vista)
     }
+
+    /**
+     * Obtiene pelicula por el id del actor
+     * @param idActor id del actor
+     */
 
     fun getFilmsByIdActor(idActor: Int):List<Pelicula>{
         var actor = actorRepository!!.findActorsByIdActor(idActor)
         return listaPeliculaRepository!!.findPeliculaByProtagonista(actor)
     }
 
+    /**
+     * Obtiene pelicula por el nombre del actor
+     * @param nombreActor nombre del actor
+     */
     fun getFilmsByNombreActor(nombreActor: String):List<Pelicula>{
         var actor = actorRepository!!.findActorsByNombreActor(nombreActor).first()
         return listaPeliculaRepository!!.findPeliculaByProtagonista(actor)
