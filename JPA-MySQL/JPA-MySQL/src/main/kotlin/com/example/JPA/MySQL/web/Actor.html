@@ -52,6 +52,26 @@
             <button type="submit">Devolver todos los actores</button>
         </form>
     </section>
+
+    <section class="formulario">
+        <form action="http://localhost:8080/actor/update" method="get">
+            <h2>Actualiza el actor</h2>
+            <label for="nombreAntiguo">Nombre antiguo del actor: </label>
+            <input type="text" id="nombreAntiguo" name="nombreAntiguo">
+            <label for="nombreNuevo">Nombre nuevo del actor: </label>
+            <input type="text" id="nombreNuevo" name="nombreNuevo">
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
+
+    <section class="formulario">
+        <form action="http://localhost:8080/actor/delete">
+            <h2>Borrar el actor</h2>
+            <label for="nombreActor3">Nombre del actor:</label>
+            <input type="text" id="nombreActor3" name="nombreActor">
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
 </main>
 </body>
 </html>

@@ -1,15 +1,10 @@
 package com.example.JPA.MySQL.controller
 
 import com.example.JPA.MySQL.data.Pelicula
-import com.example.JPA.MySQL.data.User
-import com.example.JPA.MySQL.repository.PeliculaRepository
-import com.example.JPA.MySQL.repository.UserRepository
 import com.example.JPA.MySQL.services.PeliculaService
-import org.aspectj.weaver.tools.cache.SimpleCacheFactory.path
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
-import java.time.LocalDateTime
 
 
 @Controller // This means that this class is a Controller

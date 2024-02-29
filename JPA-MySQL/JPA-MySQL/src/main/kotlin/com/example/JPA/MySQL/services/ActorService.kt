@@ -1,7 +1,6 @@
 package com.example.JPA.MySQL.services
 
 import com.example.JPA.MySQL.data.Actor
-import com.example.JPA.MySQL.data.Pelicula
 import com.example.JPA.MySQL.repository.ActorRepository
 import com.example.JPA.MySQL.repository.PeliculaRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -59,9 +58,43 @@ class ActorService {
     /**
      * Devuelve actor por la pelicula
      * @param nombrePelicula nombre de la pelicula
+     * @return mensaje de borrado
      */
     fun getActorByFilm(nombrePelicula: String):Actor{
         var pelicula = peliculaRepository!!.findPeliculaByTituloPelicula(nombrePelicula).first()
         return pelicula.protagonista!!
+    }
+
+
+    /**
+     * actualiza el actor con un nombre nuevo
+     * @param nombreAntiguo nombre antiguo del actor
+     * @param nombreNuevo nombre nuevo del actor
+     * @return mensaje de borrado
+     */
+    fun updateActorByNombre(nombreAntiguo: String, nombreNuevo:String):String{
+        var actor = actorRepository!!.findActorsByNombreActor(nombreAntiguo).first()
+        if(nombreAntiguo.isNullOrEmpty()){
+            return "No se ha encontrado nombre del actor"
+        }else{
+            actor.nombreActor = nombreNuevo
+            actorRepository.save(actor)//se guarda el actor
+            return "Se ha actualizado el nombre del actor"
+        }
+    }
+
+    /**
+     * borra el actor de la base de datos
+     * @param nombreActor nombre del actor
+     * @return mensaje de borrado
+     */
+    fun deleteActorByNombre(nombreActor: String):String{
+        var actor = actorRepository!!.findActorsByNombreActor(nombreActor).first()
+        if(nombreActor.isNullOrEmpty()){
+            return "El nombre del actor es erroneo o vacío"
+        }else{
+            actorRepository.delete(actor)
+            return "Actor Borrado"
+        }
     }
 }
