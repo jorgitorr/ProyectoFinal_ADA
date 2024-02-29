@@ -23,8 +23,6 @@ class UserService  {
     fun addNewUser(
             nombreUser: String?
     ): String {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
         val n = User()
         n.nombreUser = nombreUser
         userRepository!!.save(n)
@@ -71,11 +69,11 @@ class UserService  {
      */
     fun deleteUserByNombreUser(nombreUser: String?):String{
         if(nombreUser.isNullOrEmpty()){
-            return "No se encontró el usuario"
+            return "No se encontró el usuario $nombreUser"
         }else{
             var usuario = getUsersByName(nombreUser).first()
             userRepository!!.delete(usuario!!)
-            return "Usuario borrado"
+            return "Usuario borrado $nombreUser"
         }
     }
 
@@ -87,12 +85,12 @@ class UserService  {
      */
     fun updateUserByNombreUser(nombreUser: String?,nombreNuevo:String?):String{
         if(nombreUser.isNullOrEmpty()){
-            return "No se encontró el usuario"
+            return "No se encontró el usuario $nombreUser"
         }else{
             var usuario = getUsersByName(nombreUser).first()
             usuario?.nombreUser = nombreNuevo
             userRepository!!.save(usuario!!)
-            return "Usuario modificado"
+            return "Usuario modificado $nombreUser por $nombreNuevo"
         }
     }
 

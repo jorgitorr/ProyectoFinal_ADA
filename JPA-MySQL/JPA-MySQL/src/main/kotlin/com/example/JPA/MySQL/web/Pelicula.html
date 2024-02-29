@@ -79,6 +79,17 @@
         </form>
     </section>
 
+    <section class="formulario">
+        <h2>Actualizar película: </h2>
+        <form action="http://localhost:8080/pelicula/update" method="get">
+            <label for="nombreAntiguo">Nombre Antiguo: </label><br>
+            <input type="text" id="nombreAntiguo" name="nombreAntiguo" title="Introduce el titulo de la pelicula"><br>
+            <label for="nombreNuevo">Nombre Nuevo: </label><br>
+            <input type="text" id="nombreNuevo" name="nombreNuevo" title="Introduce el titulo de la pelicula"><br>
+            <input type="submit" value="Enviar"><br>
+        </form>
+    </section>
+
     <form action="http://localhost:8080/pelicula/all" method="get" class="center-button">
         <button type="submit">devolver todas las películas</button>
     </form>

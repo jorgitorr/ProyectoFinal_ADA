@@ -65,4 +65,10 @@ class PeliculaController {
         return peliculaService!!.deleteByFilm(tituloPelicula)
     }
 
+    @GetMapping("/update")
+    @ResponseBody
+    fun updateFilmByTitulo(@RequestParam nombreAntiguo: String, @RequestParam nombreNuevo:String):String{
+        return peliculaService!!.updateFilmsByNombre(nombreAntiguo,nombreNuevo)
+    }
+
 }

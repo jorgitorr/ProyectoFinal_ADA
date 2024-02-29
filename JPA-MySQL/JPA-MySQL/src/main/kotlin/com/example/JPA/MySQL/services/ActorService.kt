@@ -74,12 +74,12 @@ class ActorService {
      */
     fun updateActorByNombre(nombreAntiguo: String, nombreNuevo:String):String{
         var actor = actorRepository!!.findActorsByNombreActor(nombreAntiguo).first()
-        if(nombreAntiguo.isNullOrEmpty()){
-            return "No se ha encontrado nombre del actor"
+        if(nombreAntiguo.isEmpty()){
+            return "No se ha encontrado $nombreAntiguo"
         }else{
             actor.nombreActor = nombreNuevo
             actorRepository.save(actor)//se guarda el actor
-            return "Se ha actualizado el nombre del actor"
+            return "Se ha actualizado $nombreAntiguo a $nombreNuevo"
         }
     }
 
@@ -90,11 +90,11 @@ class ActorService {
      */
     fun deleteActorByNombre(nombreActor: String):String{
         var actor = actorRepository!!.findActorsByNombreActor(nombreActor).first()
-        if(nombreActor.isNullOrEmpty()){
-            return "El nombre del actor es erroneo o vacío"
+        if(nombreActor.isEmpty()){
+            return "El nombre del actor $nombreActor no existe"
         }else{
             actorRepository.delete(actor)
-            return "Actor Borrado"
+            return "Actor borrado $nombreActor"
         }
     }
 

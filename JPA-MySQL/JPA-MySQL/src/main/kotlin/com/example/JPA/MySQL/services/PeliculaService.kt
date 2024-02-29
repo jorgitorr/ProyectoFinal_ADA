@@ -116,7 +116,24 @@ class PeliculaService {
         }else{
             var film = listaPeliculaRepository!!.findPeliculaByTituloPelicula(nombre).first()
             listaPeliculaRepository.delete(film)
-            return "Pelicula borrada"
+            return "Pelicula borrada $nombre"
+        }
+    }
+
+
+    /**
+     * actualiza el nombre de la pelicula
+     * @param nombreAntiguo nombre antiguo de la pelicula
+     * @param nombreNuevo nombre nuevo de la pelicula
+     */
+    fun updateFilmsByNombre(nombreAntiguo: String, nombreNuevo:String):String{
+        if(nombreAntiguo.isEmpty()){
+            return "pelicula no encontrada"
+        }else{
+            var film = listaPeliculaRepository!!.findPeliculaByTituloPelicula(nombreAntiguo).first()
+            film.tituloPelicula = nombreNuevo
+            listaPeliculaRepository.save(film)
+            return "Pelicula actualizada de $nombreAntiguo a $nombreNuevo"
         }
     }
 
