@@ -1,5 +1,6 @@
 package com.example.JPA.MySQL.controller
 
+import com.example.JPA.MySQL.data.Pelicula
 import com.example.JPA.MySQL.data.User
 import com.example.JPA.MySQL.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*
 class UserController {
     @Autowired
     private val userService: UserService ?= null
+
 
 
     @PostMapping(path=["/add"]) // Map ONLY POST Requests
@@ -54,5 +56,13 @@ class UserController {
     @ResponseBody
     fun updateUserByNombreUser(@RequestParam nombreUser: String?, @RequestParam nombreNuevo:String):String{
         return userService!!.updateUserByNombreUser(nombreUser,nombreNuevo)
+    }
+
+
+
+    @GetMapping("/films_by_user")
+    @ResponseBody
+    fun getFilmsByNombreUser(@RequestParam nombreUser: String): Iterable<Pelicula?> {
+        return userService!!.getFilmsByUser(nombreUser)
     }
 }

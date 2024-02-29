@@ -75,3 +75,18 @@ a:hover {
 .menu li a:hover {
     background-color: #F3DFA2;
 }
+
+
+.header-bg {
+    background-image: url("../fightclub.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+    height: 150px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,6 +1,8 @@
 package com.example.JPA.MySQL.services
 
+import com.example.JPA.MySQL.data.Pelicula
 import com.example.JPA.MySQL.data.User
+import com.example.JPA.MySQL.repository.PeliculaRepository
 import com.example.JPA.MySQL.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -10,6 +12,9 @@ import org.springframework.stereotype.Service
 class UserService  {
     @Autowired
     private val userRepository: UserRepository ?= null
+
+    @Autowired
+    private val peliculaRepository:PeliculaRepository ?= null
 
     /**
      * añade un usuario
@@ -65,10 +70,10 @@ class UserService  {
      * @return deuvelve un mensaje de si el usuario se ha borrado
      */
     fun deleteUserByNombreUser(nombreUser: String?):String{
-        var usuario = getUsersByName(nombreUser).first()
         if(nombreUser.isNullOrEmpty()){
             return "No se encontró el usuario"
         }else{
+            var usuario = getUsersByName(nombreUser).first()
             userRepository!!.delete(usuario!!)
             return "Usuario borrado"
         }
@@ -81,13 +86,27 @@ class UserService  {
      * @return mensaje de usuario modificado o no se encontró el usuario
      */
     fun updateUserByNombreUser(nombreUser: String?,nombreNuevo:String?):String{
-        var usuario = getUsersByName(nombreUser).first()
         if(nombreUser.isNullOrEmpty()){
             return "No se encontró el usuario"
         }else{
+            var usuario = getUsersByName(nombreUser).first()
             usuario?.nombreUser = nombreNuevo
             userRepository!!.save(usuario!!)
             return "Usuario modificado"
+        }
+    }
+
+
+    /**
+     * @param nombreUser nombre del usuario
+     * @return obtiene las peliculas del usuario
+     */
+    fun getFilmsByUser(nombreUser: String): Iterable<Pelicula?> {
+        if(nombreUser.isEmpty()){
+            return peliculaRepository!!.findAll()
+        }else{
+            var usuario = userRepository!!.findUserByNombreUser(nombreUser).first()
+            return peliculaRepository!!.findPeliculaByUsuario(usuario!!)
         }
     }
 }

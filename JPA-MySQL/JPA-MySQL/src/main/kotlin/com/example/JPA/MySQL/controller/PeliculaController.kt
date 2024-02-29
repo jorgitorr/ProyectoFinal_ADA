@@ -57,4 +57,5 @@ class PeliculaController {
     fun getFilmsByActor(@RequestParam nombreActor: String):List<Pelicula>{
         return peliculaService!!.getFilmsByNombreActor(nombreActor)
     }
+
 }
