@@ -58,4 +58,11 @@ class PeliculaController {
         return peliculaService!!.getFilmsByNombreActor(nombreActor)
     }
 
+
+    @GetMapping("/delete")
+    @ResponseBody
+    fun deleteFilmByNombre(@RequestParam tituloPelicula: String):String{
+        return peliculaService!!.deleteByFilm(tituloPelicula)
+    }
+
 }

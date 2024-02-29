@@ -105,5 +105,21 @@ class PeliculaService {
     }
 
 
+    /**
+     * Elimina la pelicula por nombre de pelicula
+     * @param nombre nombre de la pelicula que deseas borrar
+     * @return mensaje de ha sido borrada o no
+     */
+    fun deleteByFilm(nombre: String):String{
+        if(nombre.isEmpty()){
+            return "pelicula no encontrada"
+        }else{
+            var film = listaPeliculaRepository!!.findPeliculaByTituloPelicula(nombre).first()
+            listaPeliculaRepository.delete(film)
+            return "Pelicula borrada"
+        }
+    }
+
+
 
 }
